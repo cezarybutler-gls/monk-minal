@@ -1,5 +1,6 @@
 const randomWords = require('random-words');
-const quotes = require('../data/quotes.json');
+
+
 const allWords = require('../data/allWords.json').words;
 const os = require('os');
 const wrap = require('ruxe');
@@ -12,12 +13,21 @@ const getWords = data => {
 	} else if (gameType === 'Words') {
 		count = words;
 	} else if (gameType === 'Quote') {
+		const quotes = require('../data/quotes.json');
 		// create a random number between 0 and quotes.length
 		const index = Math.floor(Math.random() * quotes.length);
 		// get the quote at that index
 		const quote = quotes[index];
 		// get the words from the quote
 		return quote.text.split(' ');
+	} else if (gameType === 'Meditations') {
+		const meditations = require('../data/meditations.json')
+		// create a random number between 0 and quotes.length
+		const index = Math.floor(Math.random() * meditations.length);
+		// get the quote at that index
+		const quote = meditations[index];
+		// get the words from the quote
+		return meditations.text.split(' ');
 	}
 
 	let generatedWords = null;

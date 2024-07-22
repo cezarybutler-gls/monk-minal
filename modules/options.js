@@ -3,7 +3,7 @@ const { Select } = require('enquirer');
 const gameTypePrompt = new Select({
 	name: 'gameType',
 	message: 'Pick a game type:',
-	choices: ['Time', 'Words', 'Quote']
+	choices: ['Time', 'Words', 'Quote', 'Meditations']
 });
 
 // Options for time
